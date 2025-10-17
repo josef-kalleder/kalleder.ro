@@ -1,0 +1,11 @@
+# Allow ChatGPT browsing agent
+User-agent: ChatGPT-User
+Disallow:
+
+# Allow GPTBot (in case used)
+User-agent: GPTBot
+Disallow:
+
+# Block all other crawlers
+User-agent: *
+Disallow: /
