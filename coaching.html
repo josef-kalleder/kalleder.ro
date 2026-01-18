@@ -24,6 +24,40 @@
     a { color: #667eea; }
     a:hover { text-decoration: underline; }
     
+    /* Photo Gallery Styles */
+    .photo-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      margin: 40px 0;
+    }
+    .photo-item {
+      text-align: center;
+      background: #f8f9fa;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .photo-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    }
+    .photo-item img {
+      width: 100%;
+      max-width: 300px;
+      height: auto;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .photo-caption {
+      font-size: 0.95em;
+      color: #555;
+      font-style: italic;
+      line-height: 1.5;
+    }
+    
     @media (max-width: 768px) {
       .header h1 { font-size: 2em; }
       section h2 { font-size: 1.5em; }
@@ -57,6 +91,17 @@
   <section id="about">
     <h2>About</h2>
     <p>Josef Kalleder brings a rich blend of professional and personal development expertise to his clients, helping them break through to new levels, no matter their goals. With a background in engineering, marketing, and entrepreneurship, Josef integrates systemic coaching methods, positive intelligence, and transformational experiences.</p>
+    
+    <div class="photo-gallery">
+      <div class="photo-item">
+        <img src="pics/josef-profile-1.jpg" alt="Josef Kalleder - Professional Coach">
+        <div class="photo-caption">Josef Kalleder - Certified coach with 200+ hours of transformational coaching experience</div>
+      </div>
+      <div class="photo-item">
+        <img src="pics/josef-profile-3.jpg" alt="Josef Kalleder - Leadership Development">
+        <div class="photo-caption">Specializing in leadership development, career transitions, and breakthrough performance</div>
+      </div>
+    </div>
   </section>
 
   <section id="training">
