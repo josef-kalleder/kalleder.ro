@@ -29,6 +29,43 @@
     a { color: #134e5e; }
     a:hover { text-decoration: underline; }
     
+    /* Photo Gallery Styles */
+    .photo-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin: 30px 0;
+    }
+    
+    .photo-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .photo-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+    
+    .photo-item img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      display: block;
+    }
+    
+    .photo-caption {
+      padding: 15px;
+      background: white;
+      text-align: center;
+      font-size: 0.95em;
+      color: #555;
+      line-height: 1.4;
+    }
+    
     @media (max-width: 768px) {
       .header h1 { font-size: 2em; }
       section h2 { font-size: 1.5em; }
@@ -126,6 +163,28 @@
         Led strategy and operations for market expansion. Developed and executed 5-year business plans, trained local teams, and organized strategic industry events.
       </li>
     </ul>
+    
+    <div class="photo-gallery">
+      <div class="photo-item">
+        <img src="pics/market entry/Apator 2008.jpg" alt="Apator 2008">
+        <div class="photo-caption">Apator 2008 - Market entry strategy and business development</div>
+      </div>
+      
+      <div class="photo-item">
+        <img src="pics/market entry/Apator 2018.jpg" alt="Apator 2018">
+        <div class="photo-caption">Apator 2018 - Long-term partnership and market expansion</div>
+      </div>
+      
+      <div class="photo-item">
+        <img src="pics/market entry/2016.09 articol apator in Agenda ConstructiilorIMG_4697.JPG" alt="Apator Press Coverage 2016">
+        <div class="photo-caption">Press coverage - Successful market positioning in Romanian construction sector</div>
+      </div>
+      
+      <div class="photo-item">
+        <img src="pics/market entry/Raf Budureasca 2014.JPG" alt="Raf Budureasca 2014">
+        <div class="photo-caption">Raf Budureasca 2014 - Corporate event and client relationship management</div>
+      </div>
+    </div>
     
     <h3>Key Capabilities</h3>
     <ul>
