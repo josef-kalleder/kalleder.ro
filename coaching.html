@@ -6,16 +6,113 @@
   <title>Coaching Services | Josef Kalleder</title>
   <style>
     body { font-family: Arial, sans-serif; color: #333; line-height: 1.6; margin: 0; padding: 0; }
-    nav { background: #333; position: sticky; top: 0; z-index: 1000; }
-    nav ul { list-style: none; margin: 0; padding: 0; display: flex; justify-content: center; flex-wrap: wrap; }
-    nav ul li a { display: block; padding: 14px 20px; color: #fff; text-decoration: none; }
-    nav ul li a:hover { background: #575757; }
-    .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 60px 20px; text-align: center; color: white; }
-    .header img { width: 150px; height: 150px; border-radius: 50%; object-fit: cover; border: 4px solid white; box-shadow: 0 4px 8px rgba(0,0,0,0.2); }
-    .header h1 { margin: 10px 0; font-size: 2.5em; }
-    .header p { margin: 5px 0; font-size: 1.1em; }
-    .header .cta-button { display: inline-block; margin-top: 20px; padding: 15px 30px; background: #ff6b6b; color: white; text-decoration: none; border-radius: 5px; font-weight: bold; font-size: 1.1em; transition: background 0.3s; }
-    .header .cta-button:hover { background: #ee5a52; }
+    
+    /* Floating Back Button */
+    .back-button { 
+      position: fixed; 
+      top: 20px; 
+      left: 20px; 
+      z-index: 1000; 
+      background: rgba(255, 255, 255, 0.95); 
+      color: #667eea; 
+      padding: 12px 24px; 
+      border-radius: 50px; 
+      text-decoration: none; 
+      font-weight: bold; 
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .back-button:hover, .back-button:focus { 
+      background: #667eea; 
+      color: white; 
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+      outline: 2px solid #667eea;
+      outline-offset: 2px;
+    }
+    
+    /* New Header Design with Photo as Background */
+    .header { 
+      position: relative;
+      min-height: 600px;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    
+    .header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: url('https://kalleder.ro/Josef%20Kalleder%20-%20Home_files/2.jpg');
+      background-size: cover;
+      background-position: center;
+      filter: brightness(0.4);
+      z-index: 0;
+    }
+    
+    .header-content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      max-width: 1000px;
+      padding: 60px 40px;
+    }
+    
+    .header h1 { 
+      margin: 0 0 25px 0; 
+      font-size: 5em; 
+      line-height: 1.1;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      text-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    }
+    
+    .header p { 
+      margin: 15px 0; 
+      font-size: 1.8em; 
+      font-weight: 600;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+      line-height: 1.4;
+    }
+    
+    .header .subtitle {
+      font-size: 1.4em;
+      font-weight: 400;
+      opacity: 0.95;
+      margin-top: 20px;
+    }
+    
+    .header .cta-button { 
+      display: inline-block; 
+      margin-top: 40px; 
+      padding: 22px 50px; 
+      background: #ff6b6b; 
+      color: white; 
+      text-decoration: none; 
+      border-radius: 50px; 
+      font-weight: 800; 
+      font-size: 1.4em; 
+      transition: all 0.3s;
+      box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    .header .cta-button:hover { 
+      background: #ee5a52; 
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(255, 107, 107, 0.6);
+    }
     section { padding: 60px 20px; max-width: 900px; margin: auto; }
     section h2 { margin-bottom: 20px; font-size: 2em; border-bottom: 3px solid #667eea; padding-bottom: 10px; color: #667eea; }
     ul { list-style-type: disc; margin-left: 20px; }
@@ -125,33 +222,50 @@
     }
     
     @media (max-width: 768px) {
-      .header h1 { font-size: 2em; }
+      .header { 
+        min-height: 500px;
+      }
+      .header-content {
+        padding: 40px 20px;
+      }
+      .header h1 { 
+        font-size: 3em; 
+        letter-spacing: 1px;
+      }
+      .header p {
+        font-size: 1.3em;
+      }
+      .header .subtitle {
+        font-size: 1.1em;
+      }
+      .header .cta-button {
+        padding: 18px 40px;
+        font-size: 1.1em;
+      }
       section h2 { font-size: 1.5em; }
-      nav ul { flex-direction: column; }
-      nav ul li a { text-align: center; }
+      .back-button {
+        top: 10px;
+        left: 10px;
+        padding: 10px 20px;
+        font-size: 0.9em;
+      }
     }
   </style>
 </head>
 <body>
-  <nav>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#training">Training & Cert.</a></li>
-      <li><a href="#activity">Activity</a></li>
-      <li><a href="#affiliations">Affiliations</a></li>
-      <li><a href="#education">Education</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+  <!-- Floating Back Button -->
+  <a href="index.html" class="back-button" aria-label="Go back to home page">
+    <span aria-hidden="true">←</span>
+    <span>Back to Home</span>
+  </a>
 
   <header class="header">
-    <img src="https://kalleder.ro/Josef%20Kalleder%20-%20Home_files/2.jpg" alt="Josef Kalleder">
-    <h1>Josef Kalleder</h1>
-    <p>Professional Coach & Consultant</p>
-    <p>Helping people break through to new levels, no matter their goals</p>
-    <a href="https://calendly.com/josefkalleder" target="_blank" class="cta-button">Book a Call</a>
+    <div class="header-content">
+      <h1>Josef Kalleder</h1>
+      <p>Professional Coach & Consultant</p>
+      <p class="subtitle">Helping people break through to new levels, no matter their goals</p>
+      <a href="https://calendly.com/josefkalleder" target="_blank" class="cta-button">Book a Call</a>
+    </div>
   </header>
 
   <!-- Photo Gallery -->
@@ -198,13 +312,13 @@
       </div>
       
       <div class="photo-item">
-        <img src="pics/coaching/placeholder1.jpg" alt="Coaching photo placeholder">
-        <div class="photo-caption">Photo placeholder - To be updated</div>
+        <img src="pics/coaching/Retreat Bran 2022_cropped.png" alt="Retreat Bran 2022 - Team coaching retreat">
+        <div class="photo-caption">Retreat Bran 2022 - Transformational team coaching retreat</div>
       </div>
       
       <div class="photo-item">
-        <img src="pics/coaching/placeholder2.jpg" alt="Coaching photo placeholder">
-        <div class="photo-caption">Photo placeholder - To be updated</div>
+        <img src="pics/coaching/Bookland kids 2024_cropped.png" alt="BookLand Romania 2024 coaching event">
+        <div class="photo-caption">BookLand Romania 2024 - Coaching workshops and events</div>
       </div>
     </div>
   </section>
