@@ -53,8 +53,8 @@
       width: 100%;
     }
     .header img { 
-      width: 280px; 
-      height: 280px; 
+      width: 388px; 
+      height: 388px; 
       border-radius: 50%; 
       object-fit: cover; 
       border: 6px solid white; 
@@ -124,7 +124,7 @@
     
     .photo-item img {
       width: 100%;
-      height: 250px;
+      height: 280px;
       object-fit: cover;
       display: block;
     }
@@ -227,6 +227,31 @@
         font-size: 0.9em;
       }
     }
+    /* Floating CTA - bottom right with subtle animation */
+    .floating-cta {
+      position: fixed;
+      right: 24px;
+      bottom: 24px;
+      z-index: 1001;
+      background: #ff6b6b;
+      color: white;
+      padding: 14px 22px;
+      border-radius: 40px;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.18);
+      transform-origin: center;
+      transition: opacity 0.3s, transform 0.3s;
+      opacity: 0;
+      pointer-events: none;
+    }
+    .floating-cta.show {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      pointer-events: auto;
+      animation: pulse 6s ease-in-out 1s infinite;
+    }
+    @keyframes pulse { 0%{transform:scale(1)}50%{transform:scale(1.03)}100%{transform:scale(1)} }
   </style>
 </head>
 <body>
@@ -243,7 +268,7 @@
         <h1>Josef Kalleder</h1>
         <p>Professional Coach & Consultant</p>
         <p>Helping people break through to new levels, no matter their goals</p>
-        <a href="https://calendly.com/josefkalleder" target="_blank" class="cta-button">Book a Call</a>
+        <a href="https://calendly.com/kalleder" target="_blank" class="cta-button">Book a Call</a>
       </div>
     </div>
   </header>
@@ -252,60 +277,46 @@
   <section style="padding: 60px 20px; max-width: 1200px; margin: auto;">
     <div class="photo-gallery">
       <div class="photo-item">
-        <img src="pics/coaching/Brandmatic conference 2023.jpg" alt="Brandmatic Conference 2023">
-        <div class="photo-caption">Brandmatic Conference 2023 - Facilitating leadership development workshops</div>
+        <img src="pics/coaching/Brandmatic conference 2023.jpg" alt="Brandmatic Conference - Delivering entrepreneurship development workshops">
+        <div class="photo-caption">Entrepreneurship development workshop for entrepreneurs in the medical industry - Brandmatic</div>
       </div>
       
       <div class="photo-item">
         <img src="pics/coaching/IMG_3351.jpg" alt="One-on-one executive coaching session in progress">
-        <div class="photo-caption">One-on-one coaching session in progress</div>
+        <div class="photo-caption">Two days Sales Development program - Vis Viridis</div>
       </div>
-      
-      <div class="photo-item">
-        <img src="pics/coaching/IMG_3514 (2).jpg" alt="Group coaching and team development workshop with participants">
-        <div class="photo-caption">Group coaching and team development workshop</div>
-      </div>
+
       
       <div class="photo-item">
         <img src="pics/coaching/PHOTO-2022-01-24-21-28-44.jpg" alt="Leadership training and personal development session with team">
-        <div class="photo-caption">Leadership training and personal development session</div>
+        <div class="photo-caption">Storytelling Sales development 4 week program - DoTerra</div>
       </div>
       
       <div class="photo-item">
         <img src="pics/coaching/Ingenius 2018 full.JPG" alt="Ingenius Conference 2018">
-        <div class="photo-caption">Ingenius Conference 2018 - Speaking on transformational coaching</div>
-      </div>
-      
-      <div class="photo-item">
-        <img src="pics/coaching/File_001 (1).png" alt="Coaching Certification">
-        <div class="photo-caption">Coach certification and training program</div>
+        <div class="photo-caption">Guest Speaker: The entrepreneurial journey - Ingenius Conference</div>
       </div>
       
       <div class="photo-item">
         <img src="pics/coaching/File_005.png" alt="Coaching Workshop">
-        <div class="photo-caption">Interactive coaching workshop with participants</div>
+        <div class="photo-caption">Delivering a Group coaching workshop for aspiring entrepreneurs - Brandmatic</div>
       </div>
-      
-      <div class="photo-item">
-        <img src="pics/coaching/File_008.png" alt="Team Coaching">
-        <div class="photo-caption">Team coaching and collaborative development session</div>
-      </div>
-      
+            
       <div class="photo-item">
         <img src="pics/coaching/Retreat Bran 2022_cropped.png" alt="Retreat Bran 2022 - Team coaching retreat">
-        <div class="photo-caption">Retreat Bran 2022 - Transformational team coaching retreat</div>
+        <div class="photo-caption">Leading a three days full immersion transformational coaching retreat</div>
       </div>
       
       <div class="photo-item">
         <img src="pics/coaching/Bookland kids 2024_cropped.png" alt="BookLand Romania 2024 coaching event">
-        <div class="photo-caption">BookLand Romania 2024 - Coaching workshops and events</div>
+        <div class="photo-caption">Pro Bono kids workshop on cyber hygiene - BookLand Romania</div>
       </div>
     </div>
   </section>
 
   <!-- Testimonials Section -->
   <section class="testimonials-section">
-    <h2>Client Testimonials</h2>
+    <h2>One on One Coaching - Client Testimonials</h2>
     <div class="testimonials-grid">
       
       <div class="testimonial-card">
@@ -324,9 +335,9 @@
       
       <div class="testimonial-card">
         <div class="testimonial-text">
-          "I recommend Josef!"
+          "I felt like I was in a well known circle, of procrastinating and feeling guilty of not doing things. Already from the first week, I am so much more productive, that I feel I took a magical pill that cured me. Not listening to Saboteurs is magical."
         </div>
-        <div class="testimonial-author">— luislourenco97</div>
+        <div class="testimonial-author">— Ecaterina</div>
       </div>
       
       <div class="testimonial-card">
@@ -361,19 +372,19 @@
         <div class="testimonial-text">
           "Although I started a bit skeptical on this coaching journey, Josef showed me that there are no reasons for skepticism. He made me feel heard, understood and took me through an introspective process through which I traveled deep within myself, managing to understand that with the right guidance you realize that all the answers were already within you. Thank you very much and I look forward to seeing you at the next sessions."
         </div>
-        <div class="testimonial-author">— de17081***</div>
+        <div class="testimonial-author">— Ioana</div>
       </div>
       
       <div class="testimonial-card">
         <div class="testimonial-text">
           "Simplicity, clarity, dedication and attention - this is how I received the coaching style of my colleague in the coaching profession, in my important experience where I was a client with a challenging and important topic for me! Thank you and congratulations."
         </div>
-        <div class="testimonial-author">— Gabriela Dumitrescu</div>
+        <div class="testimonial-author">— Gabriela</div>
       </div>
       
     </div>
     <div class="testimonial-attribution">
-      Testimonials from Hilio.com and Facebook Reviews
+      Testimonials also on <a href="https://hilio.com/ro/a/coach-josef-kalleder/testimonials">Hilio.com</a> and <a href="https://www.facebook.com/josef.kalleder.coaching/reviews">Facebook Reviews</a>
     </div>
   </section>
 
@@ -425,27 +436,22 @@
     </ul>
   </section>
 
-  <section id="experience">
-    <h2>Professional Experience</h2>
-    <ul>
-      <li><strong>Owner & Lead Coach</strong>, Josef Kalleder Coaching (2021 – Present)<br>
-        Bringing extensive expertise to help clients achieve transformational breakthroughs.
-      </li>
-      <li><strong>Co-Founder & Managing Partner</strong>, Vis Viridis Consult (Mar 2013 – Mar 2022)<br>
-        Led strategy, operations, sales, client relations; developed 5-year business plan; trained teams; organized events.
-      </li>
-    </ul>
-  </section>
-
-  <section id="contact">
-    <h2>Contact</h2>
-    <div class="contact-info">
-      <span><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/josefkalleder/" target="_blank">josefkalleder</a></span>
-    </div>
-  </section>
 
   <footer class="footer">
-    <p>&copy; 2024 Josef Kalleder. All rights reserved.</p>
+    <p>&copy; 2026 <a href="https://www.linkedin.com/in/josefkalleder/" target="_blank">Josef Kalleder</a>. All rights reserved.</p>
   </footer>
+
+  <a href="https://calendly.com/kalleder" class="floating-cta" id="floatingCta">Book a Call</a>
+
+  <script>
+    (function(){
+      const cta = document.getElementById('floatingCta');
+      function onScroll(){
+        if(window.scrollY > 220) cta.classList.add('show'); else cta.classList.remove('show');
+      }
+      window.addEventListener('scroll', onScroll);
+      onScroll();
+    })();
+  </script>
 </body>
 </html>
