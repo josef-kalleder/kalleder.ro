@@ -34,64 +34,84 @@
       outline-offset: 2px;
     }
     
-    /* New Header Design with Large Photo on Left */
+    /* New Header Design with Photo as Background */
     .header { 
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
-      padding: 80px 40px; 
+      position: relative;
+      min-height: 600px;
       color: white;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 60px;
-      min-height: 400px; /* Ensures adequate space for large profile photo and content */
+      overflow: hidden;
     }
+    
+    .header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: url('https://kalleder.ro/Josef%20Kalleder%20-%20Home_files/2.jpg');
+      background-size: cover;
+      background-position: center;
+      filter: brightness(0.4);
+      z-index: 0;
+    }
+    
     .header-content {
-      display: flex;
-      align-items: center;
-      gap: 60px;
-      max-width: 1200px;
-      width: 100%;
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      max-width: 1000px;
+      padding: 60px 40px;
     }
-    .header img { 
-      width: 280px; 
-      height: 280px; 
-      border-radius: 50%; 
-      object-fit: cover; 
-      border: 6px solid white; 
-      box-shadow: 0 8px 24px rgba(0,0,0,0.3);
-      flex-shrink: 0;
-    }
-    .header-text {
-      flex: 1;
-      text-align: left;
-    }
+    
     .header h1 { 
-      margin: 0 0 15px 0; 
-      font-size: 3.5em; 
+      margin: 0 0 25px 0; 
+      font-size: 5em; 
       line-height: 1.1;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      text-shadow: 0 4px 20px rgba(0,0,0,0.5);
     }
+    
     .header p { 
-      margin: 10px 0; 
-      font-size: 1.3em; 
-      opacity: 0.95;
+      margin: 15px 0; 
+      font-size: 1.8em; 
+      font-weight: 600;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+      line-height: 1.4;
     }
+    
+    .header .subtitle {
+      font-size: 1.4em;
+      font-weight: 400;
+      opacity: 0.95;
+      margin-top: 20px;
+    }
+    
     .header .cta-button { 
       display: inline-block; 
-      margin-top: 30px; 
-      padding: 18px 40px; 
+      margin-top: 40px; 
+      padding: 22px 50px; 
       background: #ff6b6b; 
       color: white; 
       text-decoration: none; 
       border-radius: 50px; 
-      font-weight: bold; 
-      font-size: 1.2em; 
+      font-weight: 800; 
+      font-size: 1.4em; 
       transition: all 0.3s;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
+    
     .header .cta-button:hover { 
       background: #ee5a52; 
-      transform: translateY(-2px);
-      box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(255, 107, 107, 0.6);
     }
     section { padding: 60px 20px; max-width: 900px; margin: auto; }
     section h2 { margin-bottom: 20px; font-size: 2em; border-bottom: 3px solid #667eea; padding-bottom: 10px; color: #667eea; }
@@ -203,22 +223,25 @@
     
     @media (max-width: 768px) {
       .header { 
-        flex-direction: column; 
-        padding: 60px 20px;
-        text-align: center;
+        min-height: 500px;
       }
       .header-content {
-        flex-direction: column;
-        gap: 30px;
+        padding: 40px 20px;
       }
-      .header img {
-        width: 200px;
-        height: 200px;
+      .header h1 { 
+        font-size: 3em; 
+        letter-spacing: 1px;
       }
-      .header-text {
-        text-align: center;
+      .header p {
+        font-size: 1.3em;
       }
-      .header h1 { font-size: 2.5em; }
+      .header .subtitle {
+        font-size: 1.1em;
+      }
+      .header .cta-button {
+        padding: 18px 40px;
+        font-size: 1.1em;
+      }
       section h2 { font-size: 1.5em; }
       .back-button {
         top: 10px;
@@ -238,13 +261,10 @@
 
   <header class="header">
     <div class="header-content">
-      <img src="https://kalleder.ro/Josef%20Kalleder%20-%20Home_files/2.jpg" alt="Josef Kalleder">
-      <div class="header-text">
-        <h1>Josef Kalleder</h1>
-        <p>Professional Coach & Consultant</p>
-        <p>Helping people break through to new levels, no matter their goals</p>
-        <a href="https://calendly.com/josefkalleder" target="_blank" class="cta-button">Book a Call</a>
-      </div>
+      <h1>Josef Kalleder</h1>
+      <p>Professional Coach & Consultant</p>
+      <p class="subtitle">Helping people break through to new levels, no matter their goals</p>
+      <a href="https://calendly.com/josefkalleder" target="_blank" class="cta-button">Book a Call</a>
     </div>
   </header>
 
