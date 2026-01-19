@@ -61,6 +61,69 @@
       line-height: 1.4;
     }
     
+    /* Testimonials Styles */
+    .testimonials-section {
+      background: #f8f9fa;
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .testimonials-section h2 {
+      text-align: center;
+      font-size: 2em;
+      color: #667eea;
+      margin-bottom: 40px;
+      border-bottom: 3px solid #667eea;
+      padding-bottom: 10px;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .testimonial-card {
+      background: white;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .testimonial-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+    
+    .testimonial-text {
+      font-style: italic;
+      color: #555;
+      line-height: 1.7;
+      margin-bottom: 15px;
+      font-size: 1em;
+    }
+    
+    .testimonial-author {
+      font-weight: bold;
+      color: #667eea;
+      margin-bottom: 5px;
+    }
+    
+    .testimonial-attribution {
+      font-size: 0.85em;
+      color: #888;
+      text-align: right;
+      margin-top: 20px;
+      font-style: italic;
+    }
+    
     @media (max-width: 768px) {
       .header h1 { font-size: 2em; }
       section h2 { font-size: 1.5em; }
@@ -146,6 +209,80 @@
     </div>
   </section>
 
+  <!-- Testimonials Section -->
+  <section class="testimonials-section">
+    <h2>Client Testimonials</h2>
+    <div class="testimonials-grid">
+      
+      <div class="testimonial-card">
+        <div class="testimonial-text">
+          "The conversation with Josef was pleasant. His coaching experience combined with a solution-focused mindset helped me outline concrete steps towards achieving my desired goal. I recommend!"
+        </div>
+        <div class="testimonial-author">— Rosu</div>
+      </div>
+      
+      <div class="testimonial-card">
+        <div class="testimonial-text">
+          "A wonderful experience that helped me find answers to old questions. I recommend Josef to everyone who has questions about business and career."
+        </div>
+        <div class="testimonial-author">— Antohi</div>
+      </div>
+      
+      <div class="testimonial-card">
+        <div class="testimonial-text">
+          "I recommend Josef!"
+        </div>
+        <div class="testimonial-author">— luislourenco97</div>
+      </div>
+      
+      <div class="testimonial-card">
+        <div class="testimonial-text">
+          "After listening carefully, Josef offered me a new and objective perspective on the situation I was facing. At the same time, he managed to synthesize all the emotions I was experiencing and guided me with logical steps towards the answers I was looking for. I recommend with complete confidence."
+        </div>
+        <div class="testimonial-author">— Petra</div>
+      </div>
+      
+      <div class="testimonial-card">
+        <div class="testimonial-text">
+          "I warmly recommend an invested person who listens and is attentive to every aspect of your experience. Committed and able to contain the session experience and the participant's feelings."
+        </div>
+        <div class="testimonial-author">— Cezara</div>
+      </div>
+      
+      <div class="testimonial-card">
+        <div class="testimonial-text">
+          "A professional in the true sense of the word! I had a sincere, analytical discussion in which the coach did what a coach should do - put all the details and information in perspective to make the best decision. I wholeheartedly recommend this coaching session, especially for those with algorithmic/analytical thinking. Very satisfied with the session!"
+        </div>
+        <div class="testimonial-author">— Stefan-Daniel</div>
+      </div>
+      
+      <div class="testimonial-card">
+        <div class="testimonial-text">
+          "Super session! Efficient, clear, inspiring. I felt my soul was fully nourished, I warmly recommend! I felt support, trust, and security throughout, dynamic communication, precision and attention to detail. It brought me a clear vision, a greater understanding, I feel much lighter, full of ideas and inspiration, and the enthusiasm and zest for life are indescribable. I'm already looking forward to the next sessions! I confidently recommend to everyone, any such session is super valuable! And of course, thank you Josef for today's wonderful mirroring!"
+        </div>
+        <div class="testimonial-author">— Ela</div>
+      </div>
+      
+      <div class="testimonial-card">
+        <div class="testimonial-text">
+          "Although I started a bit skeptical on this coaching journey, Josef showed me that there are no reasons for skepticism. He made me feel heard, understood and took me through an introspective process through which I traveled deep within myself, managing to understand that with the right guidance you realize that all the answers were already within you. Thank you very much and I look forward to seeing you at the next sessions."
+        </div>
+        <div class="testimonial-author">— de17081***</div>
+      </div>
+      
+      <div class="testimonial-card">
+        <div class="testimonial-text">
+          "Simplicity, clarity, dedication and attention - this is how I received the coaching style of my colleague in the coaching profession, in my important experience where I was a client with a challenging and important topic for me! Thank you and congratulations."
+        </div>
+        <div class="testimonial-author">— Gabriela Dumitrescu</div>
+      </div>
+      
+    </div>
+    <div class="testimonial-attribution">
+      Testimonials from Hilio.com and Facebook Reviews
+    </div>
+  </section>
+
   <section id="about">
     <h2>About</h2>
     <p>Josef Kalleder brings a rich blend of professional and personal development expertise to his clients, helping them break through to new levels, no matter their goals. With a background in engineering, marketing, and entrepreneurship, Josef integrates systemic coaching methods, positive intelligence, and transformational experiences.</p>
@@ -209,8 +346,6 @@
   <section id="contact">
     <h2>Contact</h2>
     <div class="contact-info">
-      <span><strong>Email:</strong> <a href="mailto:kalleder@gmail.com">kalleder@gmail.com</a></span>
-      <span><strong>Phone:</strong> <a href="tel:+40745267192">+40 745 267 192</a></span>
       <span><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/josefkalleder/" target="_blank">josefkalleder</a></span>
     </div>
   </section>
