@@ -29,6 +29,43 @@
     a { color: #134e5e; }
     a:hover { text-decoration: underline; }
     
+    /* Photo Gallery Styles */
+    .photo-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin: 30px 0;
+    }
+    
+    .photo-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .photo-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+    
+    .photo-item img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      display: block;
+    }
+    
+    .photo-caption {
+      padding: 15px;
+      background: white;
+      text-align: center;
+      font-size: 0.95em;
+      color: #555;
+      line-height: 1.4;
+    }
+    
     @media (max-width: 768px) {
       .header h1 { font-size: 2em; }
       section h2 { font-size: 1.5em; }
@@ -56,6 +93,31 @@
     <p>20+ years of entrepreneurship • International market expertise • Full-service support</p>
     <a href="mailto:kalleder@gmail.com" class="cta-button">Start Your Expansion</a>
   </header>
+
+  <!-- Photo Gallery -->
+  <section style="padding: 60px 20px; max-width: 1200px; margin: auto;">
+    <div class="photo-gallery">
+      <div class="photo-item">
+        <img src="pics/market entry/Apator 2008.jpg" alt="Business meeting with Apator team during initial market entry phase">
+        <div class="photo-caption">Apator 2008 - Market entry strategy and business development</div>
+      </div>
+      
+      <div class="photo-item">
+        <img src="pics/market entry/Apator 2018.jpg" alt="Apator partnership meeting celebrating 10 years of market expansion">
+        <div class="photo-caption">Apator 2018 - Long-term partnership and market expansion</div>
+      </div>
+      
+      <div class="photo-item">
+        <img src="pics/market entry/2016.09 articol apator in Agenda ConstructiilorIMG_4697.JPG" alt="Press coverage article about Apator in Romanian construction industry magazine">
+        <div class="photo-caption">Press coverage - Successful market positioning in Romanian construction sector</div>
+      </div>
+      
+      <div class="photo-item">
+        <img src="pics/market entry/Raf Budureasca 2014.JPG" alt="Corporate event with Raf Budureasca winery for client relationship building">
+        <div class="photo-caption">Raf Budureasca 2014 - Corporate event and client relationship management</div>
+      </div>
+    </div>
+  </section>
 
   <section id="services">
     <h2>How I Can Help</h2>
@@ -150,8 +212,6 @@
     <h2>Let's Discuss Your Expansion</h2>
     <p>Ready to explore opportunities in Romania and Moldova? Let's have a conversation about your business goals and how I can help you succeed in these markets.</p>
     <div class="contact-info">
-      <span><strong>Email:</strong> <a href="mailto:kalleder@gmail.com">kalleder@gmail.com</a></span>
-      <span><strong>Phone:</strong> <a href="tel:+40745267192">+40 745 267 192</a></span>
       <span><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/josefkalleder/" target="_blank">josefkalleder</a></span>
     </div>
   </section>
