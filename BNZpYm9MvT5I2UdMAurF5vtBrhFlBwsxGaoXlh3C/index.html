@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="ro"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+<meta name="referrer" content="no-referrer">
+<title>Bună!</title>
+<style>
+:root { color-scheme: light; --ink: #13304f; --ink-2: #4a607a; --sky: #e9f6ff; --line: #e3eef7; --good: #17915a;
+  --sun: #ffc21a; --card: #ffffff; --accent: #2b8be6; }
+* { box-sizing: border-box; }
+html, body { margin: 0; background: #ffffff; color: var(--ink); font: 16px/1.5 "Segoe UI", system-ui, -apple-system, sans-serif; }
+body { background: linear-gradient(180deg, #eaf7ff 0%, #ffffff 320px) no-repeat, #ffffff; min-height: 100vh; }
+[hidden] { display: none !important; }
+
+/* the welcome screen */
+#gate { position: fixed; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 18px; padding: 16px; background: radial-gradient(circle at 50% 40%, #fffbe6 0%, #ffffff 55%); z-index: 2;
+  transition: opacity .6s ease .35s; }
+#gate h1 { font-size: 44px; margin: 0; letter-spacing: .5px; }
+#gate form { display: flex; gap: 8px; }
+#gate input { font: inherit; font-size: 18px; padding: 12px 16px; border: 2px solid #ffe08a; border-radius: 999px;
+  outline: none; width: min(260px, 70vw); background: #fffef7; color: var(--ink); text-align: center; }
+#gate input:focus { border-color: var(--sun); box-shadow: 0 0 0 5px rgba(255, 194, 26, .2); }
+#gate button { font: inherit; font-size: 20px; width: 52px; border-radius: 999px; border: 0; background: var(--sun);
+  color: #5a3a00; cursor: pointer; }
+#gate button:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+#gate button:disabled { opacity: .6; cursor: progress; }
+#reply { min-height: 1.5em; margin: 0; font-size: 20px; color: var(--ink-2); }
+body.open #gate { opacity: 0; pointer-events: none; }
+
+/* the sun: centred on the welcome screen, then tucked into the top-left corner */
+#sun { width: 210px; height: 210px; z-index: 3; transition: transform .9s cubic-bezier(.6,.05,.25,1); }
+#sun svg { width: 100%; height: 100%; overflow: visible; }
+#sun .rays { transform-origin: 100px 100px; animation: spin 40s linear infinite; }
+#sun.wiggle { animation: wiggle .5s ease; }
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes wiggle { 0%, 100% { rotate: 0deg; } 25% { rotate: -8deg; } 75% { rotate: 8deg; } }
+
+/* the holdings */
+main { max-width: 980px; margin: 0 auto; padding: 28px 16px 48px; opacity: 0; transition: opacity .7s ease .5s; }
+body.open main { opacity: 1; }
+.hero { padding: 24px 0 8px 96px; min-height: 120px; }
+.hero h1 { font-size: 34px; margin: 6px 0 4px; }
+.lead { margin: 0; color: var(--ink-2); font-size: 18px; }
+.badge { display: inline-block; background: #e7f8ef; color: var(--good); border: 1px solid #bfeccf; border-radius: 999px;
+  padding: 4px 12px; font-size: 13px; font-weight: 600; }
+.summary { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; margin: 22px 0 8px; }
+.tile, .holding { background: var(--card); border: 1px solid var(--line); border-radius: 18px;
+  box-shadow: 0 6px 24px rgba(43, 139, 230, .07); }
+.tile { padding: 16px 18px; }
+.label { color: var(--ink-2); font-size: 13px; }
+.hero-num { font-size: 28px; font-weight: 700; font-variant-numeric: tabular-nums; }
+.big { font-size: 21px; font-weight: 650; font-variant-numeric: tabular-nums; }
+.small { color: var(--ink-2); font-size: 13px; font-variant-numeric: tabular-nums; }
+.good { color: var(--good); }
+h2 { font-size: 20px; margin: 30px 0 12px; }
+.holding { padding: 18px 20px; margin-bottom: 14px; }
+.holding-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
+.holding h3 { margin: 2px 0 0; font-size: 19px; }
+.kind { color: var(--accent); font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: .6px; }
+.pill { background: #fff6d6; color: #7a5600; border-radius: 999px; padding: 4px 12px; font-size: 13px; white-space: nowrap; }
+.figures { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; margin-top: 14px; }
+.asof { margin-top: 12px; color: var(--good); font-size: 13px; }
+.note { color: var(--ink-2); }
+footer { margin-top: 30px; color: var(--ink-2); font-size: 13px; border-top: 1px solid var(--line); padding-top: 14px; }
+@media (max-width: 560px) { .hero { padding-left: 0; padding-top: 70px; } #gate h1 { font-size: 36px; } }
+@media (prefers-reduced-motion: reduce) { #sun, #sun .rays, #gate, main { transition: none; animation: none; } }
+</style></head><body>
+<div id="gate">
+  <div id="sun"><svg viewBox="0 0 200 200" aria-hidden="true">
+  <g class="rays">
+    <rect x="96" y="14" width="8" height="26" rx="4" fill="#FFC21A" transform="rotate(0 100 100)"/><rect x="96" y="14" width="8" height="26" rx="4" fill="#FFC21A" transform="rotate(30 100 100)"/><rect x="96" y="14" width="8" height="26" rx="4" fill="#FFC21A" transform="rotate(60 100 100)"/><rect x="96" y="14" width="8" height="26" rx="4" fill="#FFC21A" transform="rotate(90 100 100)"/><rect x="96" y="14" width="8" height="26" rx="4" fill="#FFC21A" transform="rotate(120 100 100)"/><rect x="96" y="14" width="8" height="26" rx="4" fill="#FFC21A" transform="rotate(150 100 100)"/><rect x="96" y="14" width="8" height="26" rx="4" fill="#FFC21A" transform="rotate(180 100 100)"/><rect x="96" y="14" width="8" height="26" rx="4" fill="#FFC21A" transform="rotate(210 100 100)"/><rect x="96" y="14" width="8" height="26" rx="4" fill="#FFC21A" transform="rotate(240 100 100)"/><rect x="96" y="14" width="8" height="26" rx="4" fill="#FFC21A" transform="rotate(270 100 100)"/><rect x="96" y="14" width="8" height="26" rx="4" fill="#FFC21A" transform="rotate(300 100 100)"/><rect x="96" y="14" width="8" height="26" rx="4" fill="#FFC21A" transform="rotate(330 100 100)"/>
+  </g>
+  <circle cx="100" cy="100" r="54" fill="url(#sunfill)"/>
+  <defs><radialGradient id="sunfill" cx="40%" cy="35%" r="70%"><stop offset="0" stop-color="#FFF3A6"/>
+    <stop offset=".55" stop-color="#FFD43B"/><stop offset="1" stop-color="#FFB703"/></radialGradient></defs>
+  <circle cx="74" cy="112" r="9" fill="#FF8FA3" opacity=".45"/><circle cx="126" cy="112" r="9" fill="#FF8FA3" opacity=".45"/>
+  <path d="M76 92 q8 -9 16 0" stroke="#7A4B00" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <path d="M108 92 q8 -9 16 0" stroke="#7A4B00" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <path d="M78 114 q22 24 44 0" stroke="#7A4B00" stroke-width="5" fill="none" stroke-linecap="round"/>
+</svg></div>
+  <h1>Bună!</h1>
+  <form id="gate-form" autocomplete="off">
+    <input id="word" type="text" name="word" aria-label="Scrie cuvântul" autocapitalize="off" spellcheck="false" autofocus>
+    <button type="submit" aria-label="Mai departe">→</button>
+  </form>
+  <p id="reply" role="status" aria-live="polite"></p>
+</div>
+<main id="content" aria-live="polite"></main>
+<script type="application/json" id="payload">{"v": 1, "n": 600000, "s": "MWnZcoiBNR8BDkBc2RxUlg==", "i": "eRw849d6o3mKrMK3", "c": "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"}</script>
+<script>
+(function () {
+  var payload = JSON.parse(document.getElementById('payload').textContent);
+  var bytes = function (b64) { return Uint8Array.from(atob(b64), function (c) { return c.charCodeAt(0); }); };
+  async function decrypt(word) {  // same normalisation as normalize_word() in _holder_page.py
+    var norm = word.trim().toLowerCase().replace(/\s+/g, ' ');
+    if (!norm || !(window.crypto && crypto.subtle)) return null;
+    try {
+      var base = await crypto.subtle.importKey('raw', new TextEncoder().encode(norm), 'PBKDF2', false, ['deriveKey']);
+      var key = await crypto.subtle.deriveKey({name: 'PBKDF2', salt: bytes(payload.s), iterations: payload.n, hash: 'SHA-256'},
+                                              base, {name: 'AES-GCM', length: 256}, false, ['decrypt']);
+      return new TextDecoder().decode(await crypto.subtle.decrypt({name: 'AES-GCM', iv: bytes(payload.i)}, key, bytes(payload.c)));
+    } catch (e) { return null; }  // wrong word: the authentication tag does not match
+  }
+  var sun = document.getElementById('sun'), input = document.getElementById('word'), reply = document.getElementById('reply');
+  var button = document.querySelector('#gate-form button');
+  document.getElementById('gate-form').addEventListener('submit', async function (ev) {
+    ev.preventDefault();
+    button.disabled = true; reply.textContent = '…';
+    var html = await decrypt(input.value);
+    button.disabled = false;
+    if (html === null) {
+      reply.textContent = 'Si ce altceva';
+      sun.classList.remove('wiggle'); void sun.offsetWidth; sun.classList.add('wiggle');
+      input.select();
+      return;
+    }
+    reply.textContent = '';
+    document.getElementById('content').innerHTML = html;
+    // move the sun from where it is to the top-left corner, small, and keep it there
+    var r = sun.getBoundingClientRect(), size = 84, margin = 14, scale = size / r.width;
+    sun.style.position = 'fixed'; sun.style.left = r.left + 'px'; sun.style.top = r.top + 'px'; sun.style.margin = '0';
+    document.body.appendChild(sun);
+    requestAnimationFrame(function () {
+      sun.style.transformOrigin = '0 0';
+      sun.style.transform = 'translate(' + (margin - r.left) + 'px,' + (margin - r.top) + 'px) scale(' + scale + ')';
+    });
+    document.body.classList.add('open');
+    document.title = 'Bunurile tale';
+  });
+})();
+</script>
+</body></html>
